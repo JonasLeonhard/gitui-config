@@ -49,13 +49,14 @@ Add to ~/.gitconfig:
 I Ran into an Gitui issue when using multiple git accounts:
 Error: 'git: bad credentials'.Event though pushing and pulling the repository without gitui works.
 
-This might be caused because a ssh-key is missing for you config. Create one:
-Then add the ssh key required for your repository to be pulled/pushed:
+This might be caused because a ssh-key is missing for you config because it is not beeing parse correctly (https://github.com/extrawurst/gitui/issues/495#issuecomment-1198777368). 
+
+Create one, then add the ssh key required for your repository to be pulled/pushed:
 ```
 ssh-add ~/.ssh/github
 ```
 
-#### Creating a SSH key for github:
+#### Example Creating a SSH key for github. Then add it to github.settings:
 ```
 ssh-keygen -t ecdsa -C "example@gmail.com"
 Type `github` in the first question
